@@ -1,8 +1,73 @@
 main {
     margin-top: 8%;
-    border: 1px solid red;
+   
 }
 form {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
 }
+form p {
+    text-align: center;
+}
+
+#notes_section {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    width: 45%;
+    margin: 1%;
+    background-color: rgb(140, 212, 212);
+
+}
+.card .card-title {
+    font-style: italic;
+    font-weight: 800;
+    margin-bottom: 2%;
+}
+ .card .card-hashtag {
+     margin-top: 5%;
+ }
+
+ p .fa-trash {
+     text-align: right;
+ }
+
+ .btn-primary {
+     background-color: #4285F4;
+     display: block;
+     margin: 0 auto;
+ }
+
+ h2 {
+     text-align: center;
+     margin: 2%;
+ }
+h4 {
+    margin: 4%;
+}
+ #note-form .btn{
+
+    margin: 6% auto;
+
+ }
+
+ @media (min-width: 759px) {
+       main {
+            width: 70%;
+            margin: 0 auto;
+        }
+        #note-form {
+            width: 40%;
+            margin: 0;
+            
+        }
+        
+        #notes {
+            display: flex;
+            
+        }
+        
+        
+    }

@@ -12,16 +12,7 @@ class Note {
 class NotesList {
     static displayNotes() {
         const StoredNotes = [
-            {
-                title: 'Presentation',
-                description: 'need prepare presentation for tomorrow meeting',
-                hashtag: 'presentation'
-            }, 
-            {
-                title: 'Meeting',
-                description: 'Organize meeting with Sales',
-                hashtag: 'meeting'
-            }
+            
         ];
 
         const notes = StoredNotes;
@@ -37,16 +28,29 @@ static addNoteToSection(note){
         console.log(sectionNotes);
        
         const item = document.createElement('div'); 
+        item.classList.add("card"); 
         
         item.innerHTML = `
-         <p>${note.title}</p>
-         <p>${note.description}</p>
-         <p>${note.hashtag}</p>
-         <p><a href="#" class="btn btn-danger btn-sm delete">x</a></p>
+         <div class="card-body">
+         <p class="card-title">${note.title}</p>
+         <p class="card-text">${note.description}</p>
+         <p class="card-hashtag">#${note.hashtag}</p>
+         <p><a href="#" class="btn btn-danger btn-sm delete"><i class="fa fa-trash" aria-hidden="true"></i></a></p>
+         </div>
          `; 
-    
         sectionNotes.appendChild(item);
 }
+    static deleteNote(item){
+        if (item.classList.contains('delete')) {
+            item.parentElement.parentElement.parentElement.remove();
+        }
+    }
+    static clearFields() {
+        document.getElementById('title').value = "";
+        document.getElementById('description').value = "";
+        document.getElementById('hashtag').value = "";
+
+    }
 
 }
 
@@ -60,6 +64,13 @@ document.getElementById('note-form').addEventListener('submit', (e) => {
    const hashtag = document.getElementById('hashtag').value;
 
    const note = new Note(title, description, hashtag);
-   NotesList.addNoteToSection(note)
+   NotesList.addNoteToSection(note);
 
-});
+  NotesList.clearFields();
+});  
+  document.getElementById('notes_section').addEventListener('click', (e) =>
+    {
+        NotesList.deleteNote(e.target)
+    });
+
+    
