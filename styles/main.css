@@ -58,6 +58,9 @@ h4 {
             width: 70%;
             margin: 0 auto;
         }
+        form {
+            width: 45%;
+        }
         #note-form {
             width: 40%;
             margin: 0;
