@@ -1,0 +1,12 @@
+main {
+    margin-top: 8%;
+}
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+button.btn-primary {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
