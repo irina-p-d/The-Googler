@@ -3,8 +3,13 @@
 @import url(./footer.css);
 @import url(./login.css);
 
+html{
+    background: #fff;
+}
 body {
     width: 60%;
     margin: 0 auto;
+    border: 1px solid green;
+   
 
 }
